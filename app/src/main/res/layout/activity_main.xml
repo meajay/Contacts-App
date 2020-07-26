@@ -25,6 +25,6 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_add_circle_black_24dp"
         android:layout_margin="16dp"
-        android:contentDescription="@string/add_word"/>
+        android:contentDescription="@string/add_contact"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

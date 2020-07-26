@@ -45,7 +45,7 @@ public abstract class ContactRoomDatabase : RoomDatabase() {
                     val instance = Room.databaseBuilder(
                         context.applicationContext,
                         ContactRoomDatabase::class.java,
-                        "word_database"
+                        "contact_database"
                     ).addCallback(ContactDatabaseCallback(scope)).build()
                     INSTANCE = instance
                     return instance

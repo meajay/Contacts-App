@@ -15,8 +15,8 @@ class AddContactActivity : AppCompatActivity() {
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_new_word)
-        editContactView = findViewById(R.id.edit_word)
+        setContentView(R.layout.activity_new_contact)
+        editContactView = findViewById(R.id.edit_contact)
 
         val button = findViewById<Button>(R.id.button_save)
         button.setOnClickListener {
@@ -24,8 +24,8 @@ class AddContactActivity : AppCompatActivity() {
             if (TextUtils.isEmpty(editContactView.text)) {
                 setResult(Activity.RESULT_CANCELED, replyIntent)
             } else {
-                val word = editContactView.text.toString()
-                replyIntent.putExtra(EXTRA_REPLY, word)
+                val contact = editContactView.text.toString()
+                replyIntent.putExtra(EXTRA_REPLY, contact)
                 setResult(Activity.RESULT_OK, replyIntent)
             }
             finish()
@@ -33,6 +33,6 @@ class AddContactActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val EXTRA_REPLY = "com.example.android.wordlistsql.REPLY"
+        const val EXTRA_REPLY = "com.example.android.contactlistsql.REPLY"
     }
 }

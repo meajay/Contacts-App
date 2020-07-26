@@ -14,7 +14,7 @@ class ContactListAdapter internal constructor(
 ) : RecyclerView.Adapter<ContactListAdapter.ContactViewHolder>() {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
-    private var contactList = emptyList<Contact>() // Cached copy of words
+    private var contactList = emptyList<Contact>() // Cached copy of contacts
 
     inner class ContactViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val contactItemView: TextView = itemView.findViewById(R.id.textView)

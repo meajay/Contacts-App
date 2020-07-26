@@ -31,9 +31,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun initViewModel() {
         contactViewModel = ViewModelProvider(this).get(ContactViewModel::class.java)
-        contactViewModel.allContacts.observe(this, Observer { words ->
-            // Update the cached copy of the words in the adapter.
-            words?.let { adapter.setContacts(it) }
+        contactViewModel.allContacts.observe(this, Observer { contacts ->
+            // Update the cached copy of the contacts in the adapter.
+            contacts?.let { adapter.setContacts(it) }
         })
     }
 
@@ -56,8 +56,8 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == newContactActivityRequestCode && resultCode == Activity.RESULT_OK) {
             data?.getStringExtra(AddContactActivity.EXTRA_REPLY)?.let {
-                val word = Contact(it)
-                contactViewModel.insert(word)
+                val contact = Contact(it)
+                contactViewModel.insert(contact)
             }
         } else {
             Toast.makeText(
