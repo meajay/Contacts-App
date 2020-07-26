@@ -10,9 +10,10 @@ import androidx.room.PrimaryKey
 
 
 @Entity(tableName = "contact_table")
-class Contact(@PrimaryKey @ColumnInfo(name = "contact")
-              val firstName: String,
+class Contact(val firstName: String,
               val lastName:String,
               val email :String,
               val phone:String,
-              val favourite:Boolean)
+              val favourite:Boolean){
+    @PrimaryKey(autoGenerate = true) var id :Long? = null
+}

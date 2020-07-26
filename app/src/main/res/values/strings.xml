@@ -4,4 +4,14 @@
     <string name="hint_contact">Contact...</string>
     <string name="button_save">Save</string>
     <string name="empty_not_saved">Contact not saved because it is empty.</string>
+    <string name="done">Done</string>
+    <string name="cancel">Cancel</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="e_mail">E-mail</string>
+    <string name="phone_no">Phone No.</string>
+    <string name="first_name_error">First name invalid</string>
+    <string name="last_name_error">Last name invalid</string>
+    <string name="phone_number_error">Phone number invalid</string>
+    <string name="email_error">Invalid Email</string>
 </resources>

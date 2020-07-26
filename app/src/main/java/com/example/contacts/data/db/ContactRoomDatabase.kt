@@ -30,9 +30,9 @@ public abstract class ContactRoomDatabase : RoomDatabase() {
             contactDao.deleteAll()
         }
 
+    }
 
-        companion object {
-
+    companion object {
             @Volatile
             private var INSTANCE: ContactRoomDatabase? = null
 
@@ -52,5 +52,4 @@ public abstract class ContactRoomDatabase : RoomDatabase() {
                 }
             }
         }
-    }
 }

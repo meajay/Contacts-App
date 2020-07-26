@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="buttonLabel">#FFFFFF</color>
+    <color name="primaryTextColor">#0CECB8</color>
+    <color name="secondaryTextColor">#AEF6E4</color>
+    <color name="text_grey">#626262</color>
+
 </resources>

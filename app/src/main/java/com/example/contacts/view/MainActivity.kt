@@ -11,9 +11,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.contacts.R
 import com.example.contacts.data.db.Contact
+import com.example.contacts.util.Constants
 import com.example.contacts.viewmodel.ContactViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
+@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class MainActivity : AppCompatActivity() {
 
     private val newContactActivityRequestCode = 1
@@ -55,10 +57,15 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == newContactActivityRequestCode && resultCode == Activity.RESULT_OK) {
-            data?.getStringExtra(AddContactActivity.EXTRA_REPLY)?.let {
-                val contact = Contact(it)
-                contactViewModel.insert(contact)
-            }
+                  data?.getStringExtra(Constants.FIRST_NAME)?.let {
+                    contactViewModel.insert(Contact(
+                        it,
+                        data.getStringExtra(Constants.LAST_NAME),
+                        data.getStringExtra(Constants.PHONE_NUMBER),
+                        data.getStringExtra(Constants.E_MAIL),
+                        false))
+                }
+
         } else {
             Toast.makeText(
                 applicationContext,
