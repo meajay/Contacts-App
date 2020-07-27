@@ -1,8 +1,10 @@
 package com.example.contacts.data.db
 
+import androidx.annotation.NonNull
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
+import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 
@@ -12,9 +14,20 @@ import java.io.Serializable
 
 
 @Entity(tableName = "contact_table",indices = [Index(value = ["email"],unique = true)])
-class Contact(val firstname: String,
-              val lastname:String,
-              @PrimaryKey  var phone:String,
-              val email :String,
-              val favorite:Boolean): Serializable
+class Contact(): Serializable{
+    @SerializedName("firstname")
+    var firstname: String? = null
+    @SerializedName("lastname")
+    var lastname:String? = null
+    @SerializedName("phone")
+    @PrimaryKey
+    @NonNull
+    var phone:String? = null
+    @SerializedName("email")
+    var email :String? = null
+    @SerializedName("favorite")
+    var favorite:Boolean = false
+
+
+}
 

@@ -5,6 +5,8 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.example.contacts.data.network.ContactAPI
+import com.example.contacts.data.network.RetrofitClient
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -27,7 +29,7 @@ public abstract class ContactRoomDatabase : RoomDatabase() {
         }
 
         suspend fun populateDatabase(contactDao: ContactDao) {
-            //contactDao.deleteAll()
+
         }
 
     }

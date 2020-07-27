@@ -42,7 +42,9 @@ class AddContactActivity : AppCompatActivity() {
         doneButton.setOnClickListener {
             val replyIntent = Intent()
             if (isContactDataValid()) {
-                replyIntent.putExtra(Constants.FIRST_NAME, firstName.text.toString())
+                 val firstName = firstName.text.toString()
+                 val modifiedName = firstName.substring(0,1).toUpperCase() + firstName.substring(1)
+                replyIntent.putExtra(Constants.FIRST_NAME,modifiedName)
                 replyIntent.putExtra(Constants.LAST_NAME, lastName.text.toString())
                 replyIntent.putExtra(Constants.PHONE_NUMBER, phone.text.toString())
                 replyIntent.putExtra(Constants.E_MAIL, email.text.toString())

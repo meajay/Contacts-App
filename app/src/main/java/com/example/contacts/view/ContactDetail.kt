@@ -25,7 +25,7 @@ class ContactDetail : AppCompatActivity() {
     }
 
     private fun getIntentData() {
-        var intentData : Bundle = getIntent().();
+       // var intentData : Bundle = getIntent().();
     }
 
     private fun initWidgets(){

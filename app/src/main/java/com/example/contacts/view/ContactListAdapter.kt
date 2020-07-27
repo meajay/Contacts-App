@@ -30,7 +30,7 @@ class ContactListAdapter internal constructor(
     override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
         val current = contactList[position]
         holder.fullName.text = (current.firstname+ " "+ current.lastname)
-        if(current.favorite){
+        if(current.favorite!=null && current.favorite){
             holder.favImage.visibility = View.VISIBLE
         }
         else{

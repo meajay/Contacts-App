@@ -10,11 +10,14 @@ interface ContactDao {
     fun getAlphabetizedContacts(): LiveData<List<Contact>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(contact: Contact)
+     suspend fun insert(contact: Contact)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertContactList(contact: List<Contact>?)
 
     @Query("DELETE FROM contact_table")
-    suspend fun deleteAll()
+     suspend fun deleteAll()
 
     @Update
-    suspend fun updateContact( contact: Contact)
+     suspend fun updateContact( contact: Contact)
 }
