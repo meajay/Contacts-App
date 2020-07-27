@@ -2,6 +2,7 @@ package com.example.contacts.viewmodel
 
 import android.app.Application
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
@@ -10,6 +11,7 @@ import com.example.contacts.data.db.Contact
 import com.example.contacts.data.db.ContactRoomDatabase
 import com.example.contacts.data.network.ContactAPI
 import com.example.contacts.data.network.RetrofitClient
+import com.example.contacts.util.Utilities
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Call
@@ -46,6 +48,7 @@ class ContactViewModel(application: Application) : AndroidViewModel(application)
                 }
 
                 override fun onFailure(call: Call<List<Contact>>, t: Throwable) {
+                    Utilities.showToast(getApplication(),t.message.toString())
                     Log.e(tag, t.message.toString())
                 }
             })
