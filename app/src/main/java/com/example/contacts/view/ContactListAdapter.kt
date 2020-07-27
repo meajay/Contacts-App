@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.contacts.R
@@ -17,7 +18,8 @@ class ContactListAdapter internal constructor(
     private var contactList = emptyList<Contact>() // Cached copy of contacts
 
     inner class ContactViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val contactItemView: TextView = itemView.findViewById(R.id.textView)
+        val fullName: TextView = itemView.findViewById(R.id.fullName)
+        val favImage:ImageView = itemView.findViewById(R.id.userFav)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
@@ -27,7 +29,13 @@ class ContactListAdapter internal constructor(
 
     override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
         val current = contactList[position]
-        holder.contactItemView.text = current.firstName
+        holder.fullName.text = (current.firstName+ " "+ current.lastName)
+        if(current.favourite){
+            holder.favImage.visibility = View.VISIBLE
+        }
+        else{
+            holder.favImage.visibility = View.GONE
+        }
     }
 
     internal fun setContacts(contacts: List<Contact>) {

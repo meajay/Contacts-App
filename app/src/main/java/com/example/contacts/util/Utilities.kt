@@ -13,7 +13,7 @@ class Utilities {
         }
 
         fun isPhoneValid(number:String):Boolean{
-            if(number.length in 15..8){
+            if(number.length in 8..15){
                 return true
             }
             return false

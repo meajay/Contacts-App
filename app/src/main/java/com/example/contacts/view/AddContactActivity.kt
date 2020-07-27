@@ -46,10 +46,9 @@ class AddContactActivity : AppCompatActivity() {
                 replyIntent.putExtra(Constants.LAST_NAME, lastName.text.toString())
                 replyIntent.putExtra(Constants.PHONE_NUMBER, phone.text.toString())
                 replyIntent.putExtra(Constants.E_MAIL, email.text.toString())
-
                 setResult(Activity.RESULT_OK, replyIntent)
+                finish()
             }
-            finish()
         }
 
         cancalButton.setOnClickListener{

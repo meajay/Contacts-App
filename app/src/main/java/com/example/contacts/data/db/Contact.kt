@@ -9,11 +9,10 @@ import androidx.room.PrimaryKey
 //{"firstname":"john","lastname":"wick","email":"johnwick@lol.com","phone":"1111111","favorite":false}
 
 
-@Entity(tableName = "contact_table")
+@Entity(tableName = "contact_table",primaryKeys = ["firstName", "lastName"])
 class Contact(val firstName: String,
               val lastName:String,
               val email :String,
               val phone:String,
-              val favourite:Boolean){
-    @PrimaryKey(autoGenerate = true) var id :Long? = null
-}
+              val favourite:Boolean)
+

@@ -8,7 +8,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-@Database(entities = arrayOf(Contact::class), version = 1, exportSchema = false)
+@Database(entities = [Contact::class], version = 1, exportSchema = false)
 public abstract class ContactRoomDatabase : RoomDatabase() {
 
     abstract fun contactDao(): ContactDao

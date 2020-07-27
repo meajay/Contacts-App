@@ -20,8 +20,8 @@ class ContactViewModel(application: Application) : AndroidViewModel(application)
     val allContacts: LiveData<List<Contact>>
 
     init {
-        val sDao = arrayOf(ContactRoomDatabase)(application,viewModelScope).contactDao()
-        repository = ContactRepository(sDao)
+        val contactDao = ContactRoomDatabase.getDatabase(application,viewModelScope).contactDao()
+        repository = ContactRepository(contactDao)
         allContacts = repository.allContacts
     }
 

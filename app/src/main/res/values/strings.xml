@@ -14,4 +14,5 @@
     <string name="last_name_error">Last name invalid</string>
     <string name="phone_number_error">Phone number invalid</string>
     <string name="email_error">Invalid Email</string>
+    <string name="Contacts">Contacts</string>
 </resources>
