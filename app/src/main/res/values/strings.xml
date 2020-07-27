@@ -18,4 +18,7 @@
     <string name="edit">Edit</string>
     <string name="update">Update</string>
     <string name="update_contact">Marked favorite,Please update contact</string>
+    <string name="email_functionality">Email functionality is in progress</string>
+    <string name="call_functionality">Call functionality is in progress</string>
+    <string name="text_funcationality">Messaging functionality is in progress</string>
 </resources>

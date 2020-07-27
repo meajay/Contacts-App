@@ -20,6 +20,9 @@ class ContactDetail : AppCompatActivity() {
     private lateinit var editButton:TextView
     private lateinit var name:TextView
     private lateinit var contact : Contact
+    private lateinit var callButton : ImageView
+    private lateinit var emailButton : ImageView
+    private lateinit var textButton: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,6 +60,18 @@ class ContactDetail : AppCompatActivity() {
             }
         }
 
+        emailButton.setOnClickListener{
+            Utilities.showToast(this,getString(R.string.email_functionality))
+        }
+
+        callButton.setOnClickListener{
+            Utilities.showToast(this,getString(R.string.call_functionality))
+        }
+
+        textButton.setOnClickListener{
+            Utilities.showToast(this,getString(R.string.text_funcationality))
+        }
+
     }
 
     private fun setAndSendContact() {
@@ -90,5 +105,8 @@ class ContactDetail : AppCompatActivity() {
         backButton = findViewById(R.id.backButton)
         editButton = findViewById(R.id.editAction)
         name = findViewById(R.id.contactName)
+        callButton  = findViewById(R.id.callButton)
+        textButton = findViewById(R.id.textButton)
+        emailButton = findViewById(R.id.emailButton)
     }
 }
