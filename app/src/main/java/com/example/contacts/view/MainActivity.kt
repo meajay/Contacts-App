@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity(), OnAdapterItemClick {
                 val contact : Contact = data?.getSerializableExtra(Constants.CONTACT) as Contact
                 contactViewModel.updateContact(contact)
             }
-            Utilities.showToast(this,,getString(R.string.contact_updated))
+            Utilities.showToast(this,getString(R.string.contact_updated))
         }
         else {
 //            Toast.makeText(
