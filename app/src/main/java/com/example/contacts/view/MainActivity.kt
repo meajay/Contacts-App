@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.contacts.R
 import com.example.contacts.data.db.Contact
 import com.example.contacts.util.Constants
+import com.example.contacts.util.Utilities
 import com.example.contacts.util.callback.OnAdapterItemClick
 import com.example.contacts.viewmodel.ContactViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -72,13 +73,14 @@ class MainActivity : AppCompatActivity(), OnAdapterItemClick {
                 val contact : Contact = data?.getSerializableExtra(Constants.CONTACT) as Contact
                 contactViewModel.updateContact(contact)
             }
+            Utilities.showToast(this,,getString(R.string.contact_updated))
         }
         else {
-            Toast.makeText(
-                applicationContext,
-                R.string.empty_not_saved,
-                Toast.LENGTH_LONG
-            ).show()
+//            Toast.makeText(
+//                applicationContext,
+//                R.string.empty_not_saved,
+//                Toast.LENGTH_LONG
+//            ).show()
         }
     }
 

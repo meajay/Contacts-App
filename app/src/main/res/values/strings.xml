@@ -21,4 +21,5 @@
     <string name="email_functionality">Email functionality is in progress</string>
     <string name="call_functionality">Call functionality is in progress</string>
     <string name="text_funcationality">Messaging functionality is in progress</string>
+    <string name="contact_updated">Contact updated succssfully</string>
 </resources>
