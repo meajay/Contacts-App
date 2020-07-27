@@ -52,12 +52,13 @@ class ContactDetail : AppCompatActivity() {
                 return@setOnClickListener
             }
             setAndSendContact()
+            finish()
         }
 
         favContact.setOnCheckedChangeListener{ compoundButton: CompoundButton, b: Boolean ->
-            if(b){
+                setAndSendContact()
+                if(b)
                 Utilities.showToast(this,getString(R.string.update_contact))
-            }
         }
 
         emailButton.setOnClickListener{
@@ -76,10 +77,9 @@ class ContactDetail : AppCompatActivity() {
 
     private fun setAndSendContact() {
         val intent  = Intent()
-        var contact : Contact = setContactData()
+        val contact : Contact = setContactData()
         intent.putExtra(Constants.CONTACT,contact)
         setResult(Activity.RESULT_OK,intent)
-        finish()
     }
 
     private fun setContactData(): Contact {

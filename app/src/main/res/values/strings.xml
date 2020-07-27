@@ -3,7 +3,7 @@
     <string name="add_contact">Add Contact</string>
     <string name="hint_contact">Contact...</string>
     <string name="button_save">Save</string>
-    <string name="empty_not_saved">Contact not saved because it is empty.</string>
+    <string name="empty_not_saved">Invalid Contact ,can\'t be saved.</string>
     <string name="done">Done</string>
     <string name="cancel">Cancel</string>
     <string name="first_name">First Name</string>
@@ -17,7 +17,7 @@
     <string name="Contacts">Contacts</string>
     <string name="edit">Edit</string>
     <string name="update">Update</string>
-    <string name="update_contact">Marked favorite,Please update contact</string>
+    <string name="update_contact">Marked favorite.</string>
     <string name="email_functionality">Email functionality is in progress</string>
     <string name="call_functionality">Call functionality is in progress</string>
     <string name="text_funcationality">Messaging functionality is in progress</string>
