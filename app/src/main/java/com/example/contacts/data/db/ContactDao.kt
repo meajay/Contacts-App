@@ -6,13 +6,13 @@ import androidx.room.*
 @Dao
 interface ContactDao {
 
-    @Query("SELECT * from contact_table ORDER BY firstname ASC")
+    @Query("SELECT * from contact_table ORDER BY firstname COLLATE NOCASE  ASC")
     fun getAlphabetizedContacts(): LiveData<List<Contact>>
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
      suspend fun insert(contact: Contact)
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertContactList(contact: List<Contact>?)
 
     @Query("DELETE FROM contact_table")
