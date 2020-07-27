@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.contacts.view.AddContactActivity"
-            android:windowSoftInputMode="adjustResize"/>
-        <activity android:name="com.example.contacts.view.MainActivity">
+        <activity android:name=".view.ContactDetail"></activity>
+        <activity
+            android:name=".view.AddContactActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

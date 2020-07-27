@@ -15,4 +15,5 @@
     <string name="phone_number_error">Phone number invalid</string>
     <string name="email_error">Invalid Email</string>
     <string name="Contacts">Contacts</string>
+    <string name="edit">Edit</string>
 </resources>

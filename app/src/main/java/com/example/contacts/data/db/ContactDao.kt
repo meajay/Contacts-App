@@ -6,7 +6,7 @@ import androidx.room.*
 @Dao
 interface ContactDao {
 
-    @Query("SELECT * from contact_table ORDER BY firstName ASC")
+    @Query("SELECT * from contact_table ORDER BY firstname ASC")
     fun getAlphabetizedContacts(): LiveData<List<Contact>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

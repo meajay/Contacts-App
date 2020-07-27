@@ -1,9 +1,9 @@
 package com.example.contacts.data.db
 
-import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 
 //API Response
@@ -12,9 +12,9 @@ import androidx.room.PrimaryKey
 
 
 @Entity(tableName = "contact_table",indices = [Index(value = ["email"],unique = true)])
-class Contact(val firstName: String,
-              val lastName:String,
+class Contact(val firstname: String,
+              val lastname:String,
               @PrimaryKey  var phone:String,
               val email :String,
-              val favourite:Boolean)
+              val favorite:Boolean): Serializable
 
