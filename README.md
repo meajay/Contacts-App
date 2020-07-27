@@ -2,10 +2,10 @@
 
 Following Project fetches images API : http://167.172.6.138:8080/contacts
 
-1.Libraries used - Retrofit  , chuck , retrofit converter ,
+1.Libraries used - Retrofit  , chuck , retrofit converter , Room ,Live Data
 2.Architecture Used - MVVM
-
-Implementation -  As soons app starts ,it calls contacs api to get all contacts.
+3.Language Used - Kotlin
+4.Implementation -  As soons app starts ,it calls contacs api to get all contacts.
                   You can add your own contacts locally.
                   Update existing contacts whether they belongs to API or Local contacts
 
@@ -14,4 +14,4 @@ Implementation -  As soons app starts ,it calls contacs api to get all contacts.
 
 
 
-Improvements -  Better error handling,UNIT Test cases , Architectural improvements
+5.Improvements -  Better error handling,UNIT Test cases , Architectural improvements
