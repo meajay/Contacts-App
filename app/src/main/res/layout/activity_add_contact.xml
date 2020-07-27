@@ -24,7 +24,7 @@
             android:id="@+id/doneAction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/update"
+            android:text="@string/add_contact"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="12dp"
             android:textStyle="bold"

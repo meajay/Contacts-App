@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity(), OnAdapterItemClick {
 
             } else if(requestCode == Constants.EDIT_CONTACT_REQUEST_CODE) {
                 val contact : Contact = data?.getSerializableExtra(Constants.CONTACT) as Contact
-                resultCode == Activity.RESULT_OK
+                contactViewModel.updateContact(contact)
             }
         }
         else {

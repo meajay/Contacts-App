@@ -16,7 +16,7 @@ class ContactDetail : AppCompatActivity() {
     private lateinit var favContact:CheckBox
     private lateinit var email:EditText
     private lateinit var phone:EditText
-    private lateinit var backButton :ImageView
+    private lateinit var backButton :TextView
     private lateinit var editButton:TextView
     private lateinit var name:TextView
     private lateinit var contact : Contact
@@ -30,23 +30,33 @@ class ContactDetail : AppCompatActivity() {
     }
 
     private fun setData() {
-        name.setText((contact.firstname + " "+contact.lastname))
+        name.setText((contact.firstname + " " + contact.lastname))
         email.setText(contact.email)
         phone.setText(contact.phone)
         favContact.isChecked = contact.favorite
 
-        backButton.setOnClickListener{onBackPressed()
+        backButton.setOnClickListener {
+            onBackPressed()
         }
-        editButton.setOnClickListener{
-            if(!Utilities.isPhoneValid(phone.text.toString())){
+        editButton.setOnClickListener {
+            if (!Utilities.isPhoneValid(phone.text.toString())) {
+                Utilities.showToast(this,getString(R.string.phone_number_error))
                 return@setOnClickListener
             }
 
-            if(!Utilities.isEmailValid(email.text.toString())){
+            if (!Utilities.isEmailValid(email.text.toString())) {
+                Utilities.showToast(this,getString(R.string.email_error))
                 return@setOnClickListener
             }
             setAndSendContact()
         }
+
+        favContact.setOnCheckedChangeListener{ compoundButton: CompoundButton, b: Boolean ->
+            if(b){
+                Utilities.showToast(this,getString(R.string.update_contact))
+            }
+        }
+
     }
 
     private fun setAndSendContact() {

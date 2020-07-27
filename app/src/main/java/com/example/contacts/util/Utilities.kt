@@ -27,7 +27,7 @@ class Utilities {
         }
 
         fun showToast(addContactActivity: Context, message: String) {
-            Toast.makeText(addContactActivity,message,Toast.LENGTH_LONG).show()
+            Toast.makeText(addContactActivity,message,Toast.LENGTH_SHORT).show()
         }
     }
 

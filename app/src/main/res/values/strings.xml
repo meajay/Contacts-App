@@ -17,4 +17,5 @@
     <string name="Contacts">Contacts</string>
     <string name="edit">Edit</string>
     <string name="update">Update</string>
+    <string name="update_contact">Marked favorite,Please update contact</string>
 </resources>

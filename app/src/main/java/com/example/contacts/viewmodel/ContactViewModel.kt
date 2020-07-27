@@ -18,12 +18,12 @@ import retrofit2.Response
 
 class ContactViewModel(application: Application) : AndroidViewModel(application) {
 
-     val repository: ContactRepository
-     val allContacts: LiveData<List<Contact>>
-     private val tag : String  = ContactRepository::class.java.name
+    val repository: ContactRepository
+    val allContacts: LiveData<List<Contact>>
+    private val tag: String = ContactRepository::class.java.name
 
     init {
-        val contactDao = ContactRoomDatabase.getDatabase(application,viewModelScope).contactDao()
+        val contactDao = ContactRoomDatabase.getDatabase(application, viewModelScope).contactDao()
         repository = ContactRepository(contactDao)
         allContacts = repository.allContacts
     }
@@ -38,18 +38,24 @@ class ContactViewModel(application: Application) : AndroidViewModel(application)
     fun getAllContacts() {
         RetrofitClient.getRetrofitClient().create(ContactAPI::class.java).getContactList().enqueue(
             object : Callback<List<Contact>> {
-                override fun onResponse(call: Call<List<Contact>>,
-                                        response: Response<List<Contact>>
+                override fun onResponse(
+                    call: Call<List<Contact>>,
+                    response: Response<List<Contact>>
                 ) {
                     insertList(response.body())
                 }
+
                 override fun onFailure(call: Call<List<Contact>>, t: Throwable) {
-                    Log.e(tag,t.message.toString())
+                    Log.e(tag, t.message.toString())
                 }
             })
     }
 
     fun insertList(contacts: List<Contact>?) = viewModelScope.launch(Dispatchers.IO) {
         repository.insertContactsFromAPI(contacts)
+    }
+
+    fun updateContact(contact: Contact) = viewModelScope.launch(Dispatchers.IO) {
+        repository.updateContact(contact)
     }
 }
