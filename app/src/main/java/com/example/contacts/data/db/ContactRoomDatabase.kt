@@ -27,7 +27,7 @@ public abstract class ContactRoomDatabase : RoomDatabase() {
         }
 
         suspend fun populateDatabase(contactDao: ContactDao) {
-            contactDao.deleteAll()
+            //contactDao.deleteAll()
         }
 
     }
